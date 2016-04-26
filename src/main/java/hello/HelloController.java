@@ -10,11 +10,11 @@ public class HelloController {
     
     @RequestMapping("/")
     public String index() {
-        return "Greetings from your Docker powered Spring Boot app!";
+        return "Docker jest zajebisty";
     }
 
     @RequestMapping("/envs")
-    public String check() {
+    public String envs() {
         StringBuilder buf = new StringBuilder();
         Map<String, String> env = System.getenv();
         for (String envName : env.keySet()) {
@@ -22,5 +22,10 @@ public class HelloController {
         }
         return buf.toString();
     }
-    
+
+    @RequestMapping("/app")
+    public String app() {
+        return "app";
+    }
+
 }
