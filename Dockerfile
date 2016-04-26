@@ -6,8 +6,8 @@ ARG VERSION
 # Example on how VERSION build-arg can be used
 LABEL tombee.spring-boot-app.version="$VERSION"
 
-ADD target/spring-boot-app-*.jar /spring-boot-app.jar
+ADD target/spring-boot-app-*.jar /docker-spring-boot-app.jar
 
 EXPOSE 80
 
-CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/spring-boot-app.jar"]
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/docker-spring-boot-app.jar"]
