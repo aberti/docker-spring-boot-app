@@ -16,10 +16,10 @@ docker run --rm -p 8080:8080 -it aberti/spring-boot-app:latest
 
 
 # all at once
-export VERSION=0.0.1 &&/
-git reset --hard origin/master &&/
-git pull &&/
-mvn clean package &&/
-docker build –t aberti/spring-boot-app:0.0.1 . &&/
-docker login –u aberti &&/
-docker push aberti/spring-boot-app:0.0.1
+export VERSION=0.0.1 &&\
+git reset --hard HEAD &&\
+git pull &&\
+mvn clean package &&\
+docker build –t aberti/spring-boot-app:latest .  &&\
+docker login –u aberti
+docker push aberti/spring-boot-app:latest
