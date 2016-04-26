@@ -20,6 +20,6 @@ export VERSION=0.0.1 &&\
 git reset --hard HEAD &&\
 git pull &&\
 mvn clean package &&\
-docker build –t aberti/spring-boot-app:latest .  &&\
-docker login –u aberti
+docker build -t aberti/spring-boot-app:latest .  &&\
+docker login -u aberti
 docker push aberti/spring-boot-app:latest

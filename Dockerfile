@@ -8,6 +8,6 @@ LABEL tombee.spring-boot-app.version="$VERSION"
 
 ADD target/docker-spring-boot-app-*.jar /docker-spring-boot-app.jar
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/docker-spring-boot-app.jar"]
