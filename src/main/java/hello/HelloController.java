@@ -3,6 +3,8 @@ package hello;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Map;
+
 @RestController
 public class HelloController {
     
@@ -11,11 +13,14 @@ public class HelloController {
         return "Greetings from your Docker powered Spring Boot app!";
     }
 
-
-    @RequestMapping("/app")
+    @RequestMapping("/envs")
     public String check() {
-        String env = System.getenv("HOSTNAME");
-        return env;
+        StringBuilder buf = new StringBuilder();
+        Map<String, String> env = System.getenv();
+        for (String envName : env.keySet()) {
+            buf.append(envName + " : " + env.get(envName) + "<br/>");
+        }
+        return buf.toString();
     }
     
 }
