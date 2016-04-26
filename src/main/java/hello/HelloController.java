@@ -1,5 +1,6 @@
 package hello;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -7,7 +8,10 @@ import java.util.Map;
 
 @RestController
 public class HelloController {
-    
+
+    @Value("${local.server.port}")
+    private int port;
+
     @RequestMapping("/")
     public String index() {
         return "Docker jest zajebisty";
@@ -25,7 +29,7 @@ public class HelloController {
 
     @RequestMapping("/app")
     public String app() {
-        return "app";
+        return "app: " + port;
     }
 
 }
