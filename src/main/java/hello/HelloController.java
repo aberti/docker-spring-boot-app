@@ -13,8 +13,9 @@ public class HelloController {
 
 
     @RequestMapping("/app")
-    public String index() {
-        return "!";
+    public String check() {
+        String env = System.getenv("HOSTNAME");
+        return env;
     }
     
 }
