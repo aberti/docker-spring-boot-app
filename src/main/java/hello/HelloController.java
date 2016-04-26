@@ -26,7 +26,7 @@ public class HelloController {
 
     @RequestMapping("/app")
     public String app() {
-        return "app";
+        return System.getenv("HOSTNAME");
     }
 
 }
