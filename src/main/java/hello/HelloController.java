@@ -10,5 +10,11 @@ public class HelloController {
     public String index() {
         return "Greetings from your Docker powered Spring Boot app!";
     }
+
+
+    @RequestMapping("/app")
+    public String index() {
+        return "!";
+    }
     
 }
